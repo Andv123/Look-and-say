@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Look and say</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<form method="post" class="form">
+    <h2>Look-and-say sequences JS</h2>
+    <div class="input-aria">
+        <label class="label" for="row">Nhập số dòng :</label>
+        <input id="row" type="text" value="" class="input"
+               placeholder="Nhập số dòng ..." onkeyup="checkNumber()">
+        <span class="error" id="number-error"></span>
+    </div>
+    <button class="display-block input" id="show" type="button" >Enter</button>
+    <p class="show" id="viewShow"></p>
+</form>
+<script src="function.js"></script>
+</body>
+</html>
