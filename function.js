@@ -1,10 +1,10 @@
 function checkNumber() {
     var n = document.getElementById("row").value;
-    var soDong = parseInt(n);
+    var soDong = /[A-Za-z]/;
     if (n.trim() === "") {
         document.getElementById("number-error").innerHTML =
             "Vui lòng nhập số dòng !";
-    } else if (Number.isInteger(soDong) === false) {
+    } else if (soDong.test(n) === true) {
         document.getElementById("number-error").innerHTML =
             "Số dòng phải là số !";
     } else {
