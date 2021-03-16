@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', function () {
             } else if (row != "") {
                 result = "1<br>";
                 for (i = 1; i < row; i++) {
-                    result += readNumber(x) + "<br>";
-                    x = readNumber(x);
+                    result += lookAndSay(x) + "<br>";
+                    x = lookAndSay(x);
                 }
             }
         } else {
@@ -36,9 +36,25 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-function readNumber(n) {
-    var str = n.toString();
-    return str.replace(/(.)\1*/g, function(seq, num) {
-        return seq.length + num;
-    });
+function lookAndSay(n) {
+    var num = n.toString();
+    var result= "";
+    var count = 1;
+    var i;
+    for (i = 0; i < num.length; i++) {
+        if (num[i] === num[i+1]) {
+            count++;
+        } else {
+            result = result + count + num[i];
+            count = 1;
+        }
+    }
+    return result;
 }
+
+// function readNumber(n) {
+//     var str = n.toString();
+//     return str.replace(/(.)\1*/g, function(seq, num) {
+//         return seq.length + num;
+//     });
+// }
