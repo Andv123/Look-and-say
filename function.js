@@ -16,18 +16,22 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector("#show").
     addEventListener('click', function () {
         var row = document.getElementById("row").value;
+        var error = document.getElementById("number-error").innerHTML;
         var result = "";
-        var i, x = 1;
-        if (row === "1") {
-            result = "1<br>";
-        } else if (row != "") {
-            result = "1<br>";
-            for (i = 1; i < row; i++) {
-                result += readNumber(x) + "<br>";
-                x = readNumber(x);
+        if ( error === "") {
+            var i, x = 1;
+            if (row === "1") {
+                result = "1<br>";
+            } else if (row != "") {
+                result = "1<br>";
+                for (i = 1; i < row; i++) {
+                    result += readNumber(x) + "<br>";
+                    x = readNumber(x);
+                }
             }
+        } else {
+            result = "";
         }
-
         document.getElementById("viewShow").innerHTML = result;
     });
 });
